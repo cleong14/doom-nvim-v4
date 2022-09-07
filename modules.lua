@@ -45,6 +45,7 @@ return {
     -- "dap",             -- Debug code through neovim
     "repl", -- Interactive REPL in neovim
     "explorer", -- An enhanced filetree explorer
+    "neo_tree", -- Neovim plugin to manage the file system and other tree like structures
     -- "firenvim",        -- Embed neovim in your browser
     -- "lazygit",         -- Lazy git integration
     -- "neogit",          -- A git client for neovim
