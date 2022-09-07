@@ -58,7 +58,7 @@ doom = {
 
   -- Pins plugins to a commit sha to prevent breaking changes
   -- @default = true
-  freeze_dependencies = true,
+  freeze_dependencies = false,
 
   -- Enables impatent.nvim caching to speed up start time.
   -- Can cause more issues so disabled by default
@@ -115,19 +115,20 @@ doom = {
   -- false : Disable preservation of last editing position
   -- true  : Enable preservation of last editing position
   -- @default = false
-  preserve_edit_pos = false,
+  preserve_edit_pos = true,
 
   -- horizontal split on creating a new file (<Leader>fn)
   -- false : doesn't split the window when creating a new file
   -- true  : horizontal split on creating a new file
   -- @default = true
-  new_file_split = "vertical",
+  -- new_file_split = "vertical",
+  new_file_split = true,
 
   -- Enable auto comment (current line must be commented)
   -- false : disables auto comment
   -- true  : enables auto comment
   -- @default = false
-  auto_comment = false,
+  auto_comment = true,
 
   -- Enable Highlight on yank
   -- false : disables highligh on yank
@@ -152,7 +153,7 @@ doom = {
 
   -- Hide files listed in .gitignore from file browsers
   -- @default = true
-  hide_gitignore = true,
+  hide_gitignore = false,
 
   -- Checkupdates on start
   -- @default = false
@@ -164,17 +165,17 @@ doom = {
 
   -- Use floating windows for plugins manager (packer) operations
   -- @default = false
-  use_floating_win_packer = false,
+  use_floating_win_packer = true,
 
   -- Set max cols
   -- Defines the column to show a vertical marker
   -- Set to false to disable
   -- @default = 80
-  max_columns = 80,
+  max_columns = 120,
 
   -- Default indent size
   -- @default = 4
-  indent = 4,
+  indent = 2,
 
   -- Logging level
   -- Set Doom logging level
@@ -196,7 +197,7 @@ doom = {
   doom_one = {
     -- If the cursor color should be blue
     -- @default = false
-    cursor_coloring = false,
+    cursor_coloring = true,
     -- If TreeSitter highlighting should be enabled
     -- @default = true
     enable_treesitter = true,
