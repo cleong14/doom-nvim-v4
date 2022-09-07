@@ -14,6 +14,21 @@
 --   end
 -- })
 
+-- nvim-neo-tree/neo-tree.nvim
+-- doom.use_package({
+--   "nvim-neo-tree/neo-tree.nvim",
+--   -- commit = pin_commit("a917174b38b065b5fc01c89709cfc31fbe6917db"),
+--   branch = "v2.x",
+--   requires = {
+--     "nvim-lua/plenary.nvim",
+--     "kyazdani42/nvim-web-devicons", -- not strictly required, but recommended
+--     "MunifTanjim/nui.nvim"
+--   },
+--   config = function ()
+--     require("doom.modules.features.neo_tree")
+--   end,
+-- })
+
 -- ADDING A KEYBIND
 --
 -- doom.use_keybind({
