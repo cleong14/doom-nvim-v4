@@ -26,33 +26,48 @@ tabline.settings = {
       return s
     end,
     -- NOTE: this will be called a lot so don't do any heavy processing here
-    custom_filter = function(buf_number)
-      if vim.bo[buf_number].filetype ~= "dashboard" then
-        return true
-      end
-    end,
-    groups = {
-      options = {
-        toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
-      },
-      items = {
-        {
-          name = "Tests",
-          auto_close = true,
-          matcher = function(buf)
-            return buf.filename:match("%_test") or buf.filename:match("%_spec")
-          end,
-        },
-        {
-          name = "Docs",
-          auto_close = true,
-          matcher = function(buf)
-            return buf.filename:match("%.md") or buf.filename:match("%.txt")
-          end,
-        },
-      },
-    },
+    -- custom_filter = function(buf_number)
+    --   if vim.bo[buf_number].filetype ~= "dashboard" then
+    --     return true
+    --   end
+    -- end,
+    -- groups = {
+    --   options = {
+    --     toggle_hidden_on_enter = true, -- when you re-enter a hidden group this options re-opens that group so the buffer is visible
+    --   },
+    --   items = {
+    --     {
+    --       name = "Tests",
+    --       auto_close = true,
+    --       matcher = function(buf)
+    --         return buf.filename:match("%_test") or buf.filename:match("%_spec")
+    --       end,
+    --     },
+    --     {
+    --       name = "Docs",
+    --       auto_close = true,
+    --       matcher = function(buf)
+    --         return buf.filename:match("%.md") or buf.filename:match("%.txt")
+    --       end,
+    --     },
+    --   },
+    -- },
     offsets = {
+      {
+        filetype = "mind",
+        text = "Mind Explorer",
+        text_align = "center",
+      },
+      {
+        filetype = "neo-tree",
+        text = "File Explorer",
+        text_align = "center",
+      },
+      {
+        filetype = "CHADTree",
+        text = "File Explorer",
+        text_align = "center",
+      },
       {
         filetype = "NvimTree",
         text = "File Explorer",
@@ -82,11 +97,11 @@ tabline.settings = {
     show_buffer_icons = true,
     show_buffer_close_icons = true,
     show_close_icon = false,
-    show_tab_indicators = true,
+    show_tab_indicators = false,
     persist_buffer_sort = true,
     separator_style = "thick",
-    enforce_regular_tabs = true,
-    always_show_bufferline = false,
+    enforce_regular_tabs = false,
+    always_show_bufferline = true,
     sort_by = "directory",
     custom_areas = {
       right = function()
@@ -152,6 +167,18 @@ tabline.binds = {
       name = "+buffer",
       {
         {
+          "h",
+          function()
+            require("bufferline").pick_buffer()
+          end,
+          name = "Hop to buffer",
+        },
+        {
+          "f",
+          "<cmd>lua vim.lsp.buf.format()<CR>",
+          name = "Format buffer",
+        },
+        {
           "n",
           function()
             require("bufferline").cycle(1)
@@ -178,6 +205,26 @@ tabline.binds = {
             require("bufferline").cycle(-1)
           end,
           name = "Jump to prev",
+        },
+        {
+          "c",
+          "<cmd>bdelete<CR>",
+          name = "Close current buffer",
+        },
+        {
+          "C",
+          "<cmd>bdelete!<CR>",
+          name = "Force close current buffer",
+        },
+        {
+          "d",
+          "<cmd>bdelete<CR>",
+          name = "Delete current buffer",
+        },
+        {
+          "D",
+          "<cmd>bdelete!<CR>",
+          name = "Force delete current buffer",
         },
       },
     },
