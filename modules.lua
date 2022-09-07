@@ -23,15 +23,15 @@ return {
     "editorconfig", -- Support editorconfig files
     "gitsigns", -- Show git changes in sidebar
     "illuminate", -- Highlight other copies of the word you're hovering on
-    "indentlines", -- Show indent lines with special characters
+    "indentlines", -- Show indent lines with special characters  -- WIP:
     "range_highlight", -- Highlight selected range from commands
     "todo_comments", -- Highlight TODO: comments
-    -- "doom_themes",     -- Extra themes for doom
+    -- "doom_themes",     -- Extra themes for doom  -- OK:
 
     -- UI Components
     "lsp_progress", -- Check status of LSP loading
     "tabline", -- Tab bar buffer switcher
-    "dashboard", -- A pretty dashboard upon opening
+    "dashboard", -- A pretty dashboard upon opening  -- DONE:
     -- "trouble",         -- A pretty diagnostic viewer
     "statusline", -- A pretty status line at the bottom of the buffer
     -- "minimap",         -- Shows current position in document

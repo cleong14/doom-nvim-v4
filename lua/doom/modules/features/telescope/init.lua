@@ -132,8 +132,8 @@ telescope.binds = function()
         "f",
         name = "+file",
         {
-          { "f", "<cmd>Telescope find_files<CR>", name = "Find in project" },
-          { "r", "<cmd>Telescope oldfiles<CR>", name = "Find recent" },
+          { "f", "<cmd>lua require('telescope.builtin').find_files()<CR>", name = "Find in project" },
+          { "r", "<cmd>lua require('telescope.builtin').oldfiles()<CR>", name = "Find recent" },
         },
       },
       {
@@ -158,10 +158,10 @@ telescope.binds = function()
         name = "+search",
         {
           { "r", "<cmd>Telescope resume<CR>", name = "Resume previous search" },
-          { "t", "<cmd>Telescope live_grep<CR>", name = "Search text" },
+          { "t", "<cmd>lua require('telescope.builtin').live_grep()<CR>", name = "Search text" },
           { "b", "<cmd>Telescope current_buffer_fuzzy_find<CR>", name = "Text in buffer" },
           { "h", "<cmd>Telescope command_history<CR>", name = "Recent commands" },
-          { "m", "<cmd>Telescope marks<CR>", name = "Marks" },
+          { "m", "<cmd>lua require('telescope.builtin').marks()<CR>", name = "Marks" },
         },
       },
       {

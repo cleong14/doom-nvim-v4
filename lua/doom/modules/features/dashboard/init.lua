@@ -6,13 +6,13 @@ dashboard.settings = {
       icon = "  ",
       desc = "Recently Opened Files          ",
       shortcut = "SPC f r",
-      action = "Telescope oldfiles",
+      action = "lua require('telescope.builtin').oldfiles()",
     },
     {
       icon = "  ",
       desc = "Jump to Bookmark               ",
       shortcut = "SPC s m",
-      action = "Telescope marks",
+      action = "lua require('telescope.builtin').marks()",
     },
     {
       icon = "  ",

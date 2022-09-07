@@ -3,9 +3,11 @@ local indentlines = {}
 indentlines.settings = {
   char = "│",
   use_treesitter = true,
-  show_first_indent_level = false,
+  show_first_indent_level = true,
+  show_current_context = true,
+  show_current_context_start = true,
   filetype_exclude = { "help", "dashboard", "packer", "norg", "DoomInfo" },
-  buftype_exclude = { "terminal" },
+  buftype_exclude = { "terminal", "nofile" },
 }
 
 indentlines.packages = {
