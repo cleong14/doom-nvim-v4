@@ -16,8 +16,8 @@ neorg.settings = {
     ["core.norg.dirman"] = {
       config = {
         workspaces = {
-          main = "~/neorg",
-          gtd = "~/neorg/gtd",
+          main = "~/dotfiles/neorg",
+          gtd = "~/dotfiles/neorg/gtd",
           doom_docs = string.format("%s/doc", doom_root),
         },
         autodetect = true,

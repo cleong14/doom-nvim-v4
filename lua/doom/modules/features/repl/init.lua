@@ -13,7 +13,7 @@ repl.settings = {
       },
     },
     position = "right",
-    size = 20,
+    size = 40,
   },
   -- Iron doesn't set keymaps by default anymore. Set them here
   -- or use `should_map_plug = true` and map from you vim files
@@ -34,7 +34,7 @@ repl.settings = {
   -- If the highlight is on, you can change how it looks
   -- For the available options, check nvim_set_hl
   highlight = {
-    italic = true,
+    -- italic = true,
   },
 }
 

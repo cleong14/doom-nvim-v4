@@ -17,32 +17,32 @@ M.source = debug.getinfo(1, "S").source:sub(2)
 
 M.modules = {
   ui = {
-    "dashboard",                  -- Start screen  -- DONE:
-    -- "doom-themes",                -- Additional doom emacs' colorschemes  -- OK:
-    "indentlines",                -- Show indent lines  -- WIP:
-    -- "show_registers",             -- popup that shows register contents
-    "statusline",                 -- Statusline
-    "tabline",                    -- Tabline, shows your buffers list at top
+    "dashboard",                  -- Start screen  -- OK:
+    -- "doom-themes",                -- Additional doom emacs' colorschemes  -- TBD:
+    "indentlines",                -- Show indent lines  -- OK:
+    -- "show_registers",             -- popup that shows register contents  -- TBD:
+    "statusline",                 -- Statusline  -- TBD:
+    "tabline",                    -- Tabline, shows your buffers list at top  -- OK:
     "which-key",                  -- Keybindings popup menu like Emacs' guide-key
     -- "zen",                        -- Distraction free environment
-    "illuminated",                -- Highlight other uses of the word under the cursor like VSC
+    "illuminated",                -- Highlight other uses of the word under the cursor like VSC  -- OK:
   },
   doom = {
-    "compiler",                   -- Compile (and run) your code with just pressing three keys!
-    -- "contrib",                    -- Special plugins intended for Doom Nvim contributors (lua docs, etc)
-    "neorg",                      -- Life Organization Tool, used by Doom Nvim user manual
-    "runner",                     -- Open a REPL for the current language or run the current file
+    "compiler",                   -- Compile (and run) your code with just pressing three keys!  -- TBD:
+    -- "contrib",                    -- Special plugins intended for Doom Nvim contributors (lua docs, etc)  -- TBD:
+    "neorg",                      -- Life Organization Tool, used by Doom Nvim user manual  -- OK:
+    "runner",                     -- Open a REPL for the current language or run the current file  -- TBD:
   },
   editor = {
-    "autopairs",                  -- autopairs for neovim written by lua
-    "auto-session",               -- A small automated session manager for Neovim
-    "dap",                        -- Debug Adapter Protocol
+    "autopairs",                  -- autopairs for neovim written by lua  -- OK:
+    "auto-session",               -- A small automated session manager for Neovim  -- OK:
+    "dap",                        -- Debug Adapter Protocol -- TBD:
     "editorconfig",               -- EditorConfig support for Neovim
-    -- "explorer",                   -- Tree explorer
-    "neo-tree",                   -- Neovim plugin to manage the file system and other tree like structures.
+    -- "explorer",                   -- Tree explorer  -- TBD:
+    "neo-tree",                   -- Neovim plugin to manage the file system and other tree like structures.  -- OK:
     -- "neo-tree-diagnostics",       -- A diagnostics source for neo-tree.nvim
     "formatter",                  -- File formatting
-    "gitsigns",                   -- Git signs
+    "gitsigns",                   -- Git signs  -- OK:
     "git-conflict",               -- A plugin to visualise and resolve merge conflicts in neovim
     -- "kommentary",                 -- Comments plugin
     "comment",                    -- Smart and Powerful commenting plugin for neovim
