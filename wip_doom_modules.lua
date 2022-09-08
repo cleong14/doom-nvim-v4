@@ -59,7 +59,7 @@ M.modules = {
     -- "friendly-snippets",          -- Set of preconfigured snippets for different languages.
     -- "luasnip",                    -- Snippet Engine for Neovim written in Lua.
     "symbols",                    -- LSP symbols and tags -- TODO:
-    "telescope",                  -- Highly extendable fuzzy finder over lists -- TODO:
+    "telescope",                  -- Highly extendable fuzzy finder over lists -- WIP:
     "terminal",                   -- Terminal for Neovim (NOTE: needed for runner and compiler) -- TODO:
     "trouble",                    -- A pretty list to help you solve all the trouble your code is causing. -- TODO:
     "comment-box",                -- ✨ Clarify and beautify your comments using boxes and lines. -- TODO:

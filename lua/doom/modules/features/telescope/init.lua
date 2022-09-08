@@ -1,3 +1,4 @@
+-- https://github.com/nvim-telescope/telescope.nvim#telescope-defaults
 local telescope = {}
 
 telescope.settings = {
@@ -9,26 +10,52 @@ telescope.settings = {
       "--line-number",
       "--column",
       "--smart-case",
+      "--context=10",
     },
     initial_mode = "insert",
     selection_strategy = "reset",
     sorting_strategy = "descending",
     layout_strategy = "horizontal",
-    prompt_prefix = "   ",
+    prompt_prefix = "❯ ",
+    selection_caret = "❯ ",
     layout_config = {
-      width = 0.75,
-      preview_cutoff = 120,
-      prompt_position = "bottom",
-      vertical = { mirror = false },
-      horizontal = {
-        mirror = false,
-        preview_width = 0.6,
+      bottom_pane = {
+        height = 25,
+        preview_cutoff = 120,
+        prompt_position = "top"
       },
+      center = {
+        height = 0.4,
+        preview_cutoff = 40,
+        prompt_position = "top",
+        width = 0.5
+      },
+      cursor = {
+        height = 0.9,
+        preview_cutoff = 40,
+        width = 0.8
+      },
+      horizontal = {
+        height = 0.9,
+        preview_cutoff = 120,
+        prompt_position = "bottom",
+        width = 0.8
+      },
+      vertical = {
+        height = 0.9,
+        preview_cutoff = 40,
+        prompt_position = "bottom",
+        width = 0.8
+      }
     },
+    -- file_sorter = require("telescope.sorters").get_fuzzy_file,
     file_ignore_patterns = { "^%.git/", "^node_modules/", "^__pycache__/" },
+    -- generic_sorter = require("telescope.sorters").get_generic_fuzzy_sorter,
     winblend = 0,
+    wrap_results = true,
     scroll_strategy = "cycle",
-    border = {},
+    -- border = {},
+    border = true,
     borderchars = {
       "─",
       "│",
@@ -39,10 +66,20 @@ telescope.settings = {
       "╯",
       "╰",
     },
+    path_display = {
+      truncate = 3
+    },
+    dynamic_preview_title = true,
     color_devicons = true,
     use_less = true,
     set_env = { ["COLORTERM"] = "truecolor" }, -- default = nil,
+    -- file_previewer = require("telescope.previewers").vim_buffer_cat.new,
+    -- grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
+    -- qflist_previewer = require("telescope.previewers").vim_buffer_qflist.new,
+    -- Developer configurations: Not meant for general override
+    -- buffer_previewer_maker = require("telescope.previewers").buffer_previewer_maker,
   },
+  -- CHECKPOINT:
   extensions = { "mapper" },
 }
 

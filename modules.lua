@@ -44,7 +44,7 @@ return {
     -- Tools
     -- "dap",             -- Debug code through neovim -- TBD:
     "repl", -- Interactive REPL in neovim  -- OK:
-    "explorer", -- An enhanced filetree explorer  -- TBD:
+    -- "explorer", -- An enhanced filetree explorer  -- TBD:
     "neo_tree", -- Neovim plugin to manage the file system and other tree like structures  -- OK:
     -- "firenvim",        -- Embed neovim in your browser
     -- "lazygit",         -- Lazy git integration -- OK:
@@ -53,7 +53,7 @@ return {
     "projects", -- Quickly switch between projects
     -- "superman",        -- Read unix man pages in neovim
     -- "suda",            -- Save using sudo when necessary
-    "telescope", -- Fuzzy searcher to find files, grep code and more
+    "telescope", -- Fuzzy searcher to find files, grep code and more -- WIP:
     "whichkey", -- An interactive sheet
   },
   langs = {
