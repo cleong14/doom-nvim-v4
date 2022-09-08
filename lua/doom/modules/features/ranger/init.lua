@@ -1,3 +1,4 @@
+-- https://github.com/francoiscabrol/ranger.vim
 local ranger = {}
 
 ranger.settings = {}

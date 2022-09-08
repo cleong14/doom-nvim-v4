@@ -26,7 +26,9 @@ lazygit.binds = {
       "g",
       name = "+git",
       {
-        { "o", "<cmd>LazyGit<CR>", name = "Open lazygit" },
+        { "o", "<cmd>LazyGit<CR>", name = "Open LazyGit" },
+        { "f", "<cmd>LazyGitFilter<CR>", name = "Open LazyGitFilter" },
+        { "F", "<cmd>LazyGitFilterCurrentFile<CR>", name = "Open LazyGitFilterCurrentFile" },
       },
     },
   },

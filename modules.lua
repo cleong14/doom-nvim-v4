@@ -12,10 +12,10 @@ return {
     "annotations", -- Code annotation generator
     "auto_install", -- Auto install LSP providers
     "autopairs", -- Automatically close character pairs  -- OK:
-    "comment", -- Adds keybinds to comment in any language
-    "linter", -- Linting and formatting for languages
-    "lsp", -- Code completion
-    "extra_snippets", -- Code snippets for all languages
+    "comment", -- Adds keybinds to comment in any language  -- OK:
+    "linter", -- Linting and formatting for languages  -- TODO:
+    "lsp", -- Code completion -- TODO:
+    "extra_snippets", -- Code snippets for all languages -- TODO:
 
     -- Editor
     "auto_session", -- Remember sessions between loads  -- OK:
@@ -36,8 +36,8 @@ return {
     "statusline", -- A pretty status line at the bottom of the buffer  -- TBD:
     -- "minimap",         -- Shows current position in document
     -- "terminal",        -- Integrated terminal in neovim
-    -- "symbols",         -- Navigate between code symbols using telescope
-    -- "ranger",          -- File explorer in neovim (TODO: Test)
+    -- "symbols",         -- Navigate between code symbols using telescope -- TODO:
+    -- "ranger",          -- File explorer in neovim (TODO: Test) -- OK:
     -- "restclient",      -- Test HTTP requests from neovim (TODO: Test)
     -- "show_registers",  -- Show and navigate between registers  -- TBD:
 
@@ -47,7 +47,7 @@ return {
     "explorer", -- An enhanced filetree explorer  -- TBD:
     "neo_tree", -- Neovim plugin to manage the file system and other tree like structures  -- OK:
     -- "firenvim",        -- Embed neovim in your browser
-    -- "lazygit",         -- Lazy git integration
+    -- "lazygit",         -- Lazy git integration -- OK:
     -- "neogit",          -- A git client for neovim
     "neorg", -- Organise your life  -- OK:
     "projects", -- Quickly switch between projects

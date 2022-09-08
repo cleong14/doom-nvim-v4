@@ -1,3 +1,4 @@
+-- https://github.com/numToStr/Comment.nvim
 local comment = {}
 
 comment.settings = {
@@ -15,6 +16,45 @@ comment.settings = {
   --- Example: Use '^$' to ignore empty lines
   --- @type string|fun():string
   ignore = nil,
+
+  ---LHS of toggle mappings in NORMAL mode
+  toggler = {
+    ---Line-comment toggle keymap
+    line = 'gcc',
+    ---Block-comment toggle keymap
+    block = 'gbc',
+  },
+  ---LHS of operator-pending mappings in NORMAL and VISUAL mode
+  opleader = {
+    ---Line-comment keymap
+    line = 'gc',
+    ---Block-comment keymap
+    block = 'gb',
+  },
+  ---LHS of extra mappings
+  extra = {
+    ---Add comment on the line above
+    above = 'gcO',
+    ---Add comment on the line below
+    below = 'gco',
+    ---Add comment at the end of line
+    -- eol = 'gcA',
+    eol = 'gcL',
+  },
+  ---Enable keybindings
+  ---NOTE: If given `false` then the plugin won't create any mappings
+  -- mappings = {
+  --   ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+  --   basic = true,
+  --   ---Extra mapping; `gco`, `gcO`, `gcA`
+  --   extra = true,
+  --   ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
+  --   extended = false,
+  -- },
+  ---Function to call before (un)comment
+  -- pre_hook = nil,
+  ---Function to call after (un)comment
+  post_hook = nil,
 
   --- Passes to ts-context-commentstring to get commentstring in JSX
   pre_hook = function(ctx)
@@ -53,9 +93,19 @@ comment.configs = {}
 comment.configs["Comment.nvim"] = function()
   local config = vim.tbl_extend("force", doom.features.comment.settings, {
     -- Disable mappings as we'll handle it in binds.lua
+    -- mappings = {
+    --   basic = false,
+    --   extra = false,
+    --   extended = false,
+    -- },
+    ---Enable keybindings
+    ---NOTE: If given `false` then the plugin won't create any mappings
     mappings = {
-      basic = false,
-      extra = false,
+      ---Operator-pending mapping; `gcc` `gbc` `gc[count]{motion}` `gb[count]{motion}`
+      basic = true,
+      ---Extra mapping; `gco`, `gcO`, `gcA`
+      extra = true,
+      ---Extended mapping; `g>` `g<` `g>[count]{motion}` `g<[count]{motion}`
       extended = false,
     },
   })
@@ -63,33 +113,34 @@ comment.configs["Comment.nvim"] = function()
   require("Comment").setup(config)
 end
 
-comment.binds = {
-  {
-    "gc",
-    [[<cmd>lua require("Comment.api").call("toggle_linewise_op")<CR>g@]],
-    name = "Comment motion",
-  },
-  {
-    "gc",
-    [[<Esc><cmd>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>]],
-    name = "Comment line",
-    mode = "v",
-  },
-  {
-    "gb",
-    [[<Esc><cmd>lua require("Comment.api").toggle_blockwise_op(vim.fn.visualmode())<CR>]],
-    name = "Comment block",
-    mode = "v",
-  },
-  {
-    "gcc",
-    [[<cmd>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$]],
-    name = "Comment line",
-  },
-  {
-    "gcA",
-    [[<cmd>lua require("Comment.api").insert_linewise_eol()<CR>]],
-    name = "Comment end of line",
-  },
-}
+comment.binds = {}
+-- comment.binds = {
+--   {
+--     "gc",
+--     [[<cmd>lua require("Comment.api").call("toggle_linewise_op")<CR>g@]],
+--     name = "Comment motion",
+--   },
+--   {
+--     "gc",
+--     [[<Esc><cmd>lua require("Comment.api").toggle_linewise_op(vim.fn.visualmode())<CR>]],
+--     name = "Comment line",
+--     mode = "v",
+--   },
+--   {
+--     "gb",
+--     [[<Esc><cmd>lua require("Comment.api").toggle_blockwise_op(vim.fn.visualmode())<CR>]],
+--     name = "Comment block",
+--     mode = "v",
+--   },
+--   {
+--     "gcc",
+--     [[<cmd>lua require("Comment.api").call("toggle_current_linewise_op")<CR>g@$]],
+--     name = "Comment line",
+--   },
+--   {
+--     "gcA",
+--     [[<cmd>lua require("Comment.api").insert_linewise_eol()<CR>]],
+--     name = "Comment end of line",
+--   },
+-- }
 return comment
